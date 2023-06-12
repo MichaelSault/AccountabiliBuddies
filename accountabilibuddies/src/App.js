@@ -7,7 +7,7 @@ function App() {
         <h2>
           Welcome to AccountibiliBuddies
         </h2>
-          (Yes we know that's a mouthfull)
+          (Yes we know that's a mouthful)
       </header>
     </div>
   );
