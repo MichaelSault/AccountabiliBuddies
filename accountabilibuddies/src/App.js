@@ -1,5 +1,7 @@
 import './App.css';
 
+import HabbitCard from './components/HabbitCard.component';
+
 function App() {
   return (
     <div className="App">
@@ -9,6 +11,8 @@ function App() {
         </h2>
           (Yes we know that's a mouthful)
       </header>
+
+      <HabbitCard />
     </div>
   );
 }

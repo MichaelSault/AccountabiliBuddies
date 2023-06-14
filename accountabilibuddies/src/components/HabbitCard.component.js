@@ -6,6 +6,18 @@ import { Avatar, Box, Grid, Menu, MenuItem, Typography } from '@mui/material';
 
 //project imports
 import MainCard from './MainCard.component';
+import SkeletonCard from './SkeletonCard.component';
+
+//import assets
+import EarningIcon from 'assets/images/icons/earning.svg';
+import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
+
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import GetAppTwoToneIcon from '@mui/icons-material/GetAppOutlined';
+import FileCopyTwoToneIcon from '@mui/icons-material/FileCopyOutlined';
+import PictureAsPdfTwoToneIcon from '@mui/icons-material/PictureAsPdfOutlined';
+import ArchiveTwoToneIcon from '@mui/icons-material/ArchiveOutlined';
+
 
 const CardWrapper = styled(MainCard)(({ theme }) => ({
     backgroundColor: theme.palette.secondary.dark,
@@ -46,7 +58,7 @@ const CardWrapper = styled(MainCard)(({ theme }) => ({
 
 // ===========================|| DASHBOARD DEFAULT - EARNING CARD ||=========================== //
 
-const EarningCard = ({ isLoading }) => {
+const HabbitCard = ({ isLoading }) => {
     const theme = useTheme();
   
     const [anchorEl, setAnchorEl] = useState(null);
@@ -62,7 +74,7 @@ const EarningCard = ({ isLoading }) => {
     return (
       <>
         {isLoading ? (
-          <SkeletonEarningCard />
+          <SkeletonCard />
         ) : (
           <CardWrapper border={false} content={false}>
             <Box sx={{ p: 2.25 }}>
