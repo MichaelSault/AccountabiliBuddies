@@ -9,7 +9,7 @@ import MainCard from './MainCard.component';
 import SkeletonCard from './SkeletonCard.component';
 
 //import assets
-import EarningIcon from 'assets/images/icons/earning.svg';
+//import EarningIcon from 'assets/images/icons/earning.svg';
 import MoreHorizIcon from '@mui/icons-material/MoreHoriz';
 
 import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
@@ -74,7 +74,8 @@ const HabbitCard = ({ isLoading }) => {
     return (
       <>
         {isLoading ? (
-          <SkeletonCard />
+        //   <SkeletonCard />
+            <></>
         ) : (
           <CardWrapper border={false} content={false}>
             <Box sx={{ p: 2.25 }}>
@@ -91,7 +92,7 @@ const HabbitCard = ({ isLoading }) => {
                           mt: 1
                         }}
                       >
-                        <img src={EarningIcon} alt="Notification" />
+                        {/* <img src={EarningIcon} alt="Notification" /> */}
                       </Avatar>
                     </Grid>
                     <Grid item>
@@ -179,3 +180,5 @@ const HabbitCard = ({ isLoading }) => {
       </>
     );
   };
+
+  export default HabbitCard;
