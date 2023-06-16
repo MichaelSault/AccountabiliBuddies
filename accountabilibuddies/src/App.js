@@ -1,6 +1,6 @@
 import './App.css';
 
-import HabbitCard from './components/HabbitCard.component';
+import MainCard from './components/MainCard.component';
 
 function App() {
   return (
@@ -12,7 +12,7 @@ function App() {
           (Yes we know that's a mouthful)
       </header>
 
-      <HabbitCard />
+      <MainCard title="habits" secondary="mark as completed"/>
     </div>
   );
 }
