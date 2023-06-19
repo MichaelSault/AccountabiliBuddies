@@ -1,4 +1,5 @@
 import { forwardRef } from 'react';
+import Chart from 'chart.js/auto';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
@@ -8,6 +9,23 @@ import { Card, CardContent, CardHeader, Divider, Typography } from '@mui/materia
 const headerSX = {
     '& .MuiCardHeader-action': { mr: 0 }
 };
+
+// ==============================|| EXAMPLE CHART DATA ||============================ //
+const xValues = [50,60,70,80,90,100,110,120,130,140,150];
+const yValues = [7,8,8,9,9,9,10,11,14,14,15];
+
+new Chart("myChart", {
+  type: "line",
+  data: {
+    labels: xValues,
+    datasets: [{
+      backgroundColor:"rgba(0,0,255,1.0)",
+      borderColor: "rgba(0,0,255,0.1)",
+      data: yValues
+    }]
+  }
+});
+
 
 // ==============================|| CUSTOM MAIN CARD ||============================== //
 
@@ -60,6 +78,7 @@ const MainCard = forwardRef(
             {content && (
             <CardContent sx={contentSX} className={contentClass}>
                 {children}
+                <canvas id="myChart"></canvas>
             </CardContent>
         )}
         {!content && children}
