@@ -11,8 +11,8 @@ const headerSX = {
 };
 
 // ==============================|| EXAMPLE CHART DATA ||============================ //
-const xValues = [50,60,70,80,90,100,110,120,130,140,150];
-const yValues = [7,8,8,9,9,9,10,11,14,14,15];
+const xValues = [50,60,70,80,90];
+const yValues = [7,8,8,9,9,9];
 
 new Chart("myChart", {
   type: "line",
@@ -78,7 +78,7 @@ const MainCard = forwardRef(
             {content && (
             <CardContent sx={contentSX} className={contentClass}>
                 {children}
-                <canvas id="myChart"></canvas>
+                <div><canvas id="myChart" width="200" height="100"></canvas></div>
             </CardContent>
         )}
         {!content && children}
