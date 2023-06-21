@@ -1,17 +1,18 @@
 import './App.css';
 
 import MainCard from './components/MainCard.component';
+import MenuDrawer from './components/MenuDrawer.component';
 
 function App() {
   return (
     <div className="App">
+      <MenuDrawer/>
       <header className="App-header">
         <h2>
           Welcome to AccountibiliBuddies
         </h2>
           (Yes, we know that's a mouthful!)
       </header>
-
       {/* table will be auto generated from db with the map function */}
       <table width={'80%'} align='center'>
         <tr>

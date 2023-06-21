@@ -78,7 +78,7 @@ const MainCard = forwardRef(
             {content && (
             <CardContent sx={contentSX} className={contentClass}>
                 {children}
-                <div><canvas id="myChart" width="200" height="100"></canvas></div>
+                <div><canvas id="myChart" width="20" height="10"></canvas></div>
             </CardContent>
         )}
         {!content && children}
