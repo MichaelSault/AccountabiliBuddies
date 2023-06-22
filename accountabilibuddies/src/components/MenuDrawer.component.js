@@ -8,8 +8,14 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
-import InboxIcon from '@mui/icons-material/MoveToInbox';
-import MailIcon from '@mui/icons-material/Mail';
+
+/* Icons for the menu drawer */
+import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
+import AutoGraphIcon from '@mui/icons-material/AutoGraph';
+import GroupsIcon from '@mui/icons-material/Groups';
+import SendIcon from '@mui/icons-material/Send';
+import PeopleAltIcon from '@mui/icons-material/PeopleAlt';
+import PeopleAltOutlinedIcon from '@mui/icons-material/PeopleAltOutlined';
 
 export default function MenuDrawer() {
   const [state, setState] = React.useState({
@@ -24,6 +30,7 @@ export default function MenuDrawer() {
     setState({ ...state, [anchor]: open });
   };
 
+  /* each list item should be link to the corrisponding page */
   const list = (anchor) => (
     <Box
       sx={{ width: anchor === 'top' || anchor === 'bottom' ? 'auto' : 250 }}
@@ -32,11 +39,13 @@ export default function MenuDrawer() {
       onKeyDown={toggleDrawer(anchor, false)}
     >
       <List>
-        {['Inbox', 'Starred', 'Send email', 'Drafts'].map((text, index) => (
+        <h2>AccountibiliBuddies</h2>
+        <Divider />
+        {['Home', 'Habits', 'Friends', 'Messages'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {index === 0 ? <HomeRoundedIcon /> : index === 1 ? <AutoGraphIcon /> : index === 2 ? <GroupsIcon /> : <SendIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
@@ -45,17 +54,19 @@ export default function MenuDrawer() {
       </List>
       <Divider />
       <List>
-        {['All mail', 'Trash', 'Spam'].map((text, index) => (
+        {/* auto populate list of friends from db */}
+        {['Shannon', 'Rhya', 'Hunter'].map((text, index) => (
           <ListItem key={text} disablePadding>
             <ListItemButton>
               <ListItemIcon>
-                {index % 2 === 0 ? <InboxIcon /> : <MailIcon />}
+                {index % 2 === 0 ? <PeopleAltIcon /> : <PeopleAltOutlinedIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
           </ListItem>
         ))}
       </List>
+      <Divider />
     </Box>
   );
 

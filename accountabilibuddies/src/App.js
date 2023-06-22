@@ -11,7 +11,7 @@ function App() {
         <h2>
           Welcome to AccountibiliBuddies
         </h2>
-          (Yes, we know that's a mouthful!)
+          (Accountable to no one, except your friends!) {/* have this generate from a list, minecraft style */}
       </header>
       {/* table will be auto generated from db with the map function */}
       <table width={'80%'} align='center'>
