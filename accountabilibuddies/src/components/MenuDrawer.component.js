@@ -43,26 +43,30 @@ export default function MenuDrawer() {
         <Divider />
         {['Home', 'Habits', 'Friends', 'Messages'].map((text, index) => (
           <ListItem key={text} disablePadding>
+            <a href={text}>
             <ListItemButton>
               <ListItemIcon>
                 {index === 0 ? <HomeRoundedIcon /> : index === 1 ? <AutoGraphIcon /> : index === 2 ? <GroupsIcon /> : <SendIcon />}
               </ListItemIcon>
               <ListItemText primary={text} />
             </ListItemButton>
+            </a>
           </ListItem>
         ))}
       </List>
       <Divider />
       <List>
         {/* auto populate list of friends from db */}
-        {['Shannon', 'Rhya', 'Hunter'].map((text, index) => (
-          <ListItem key={text} disablePadding>
+        {['Shannon', 'Rhya', 'Hunter'].map((friend, index) => (
+          <ListItem key={friend} disablePadding>
+            <a href={friend}>
             <ListItemButton>
               <ListItemIcon>
                 {index % 2 === 0 ? <PeopleAltIcon /> : <PeopleAltOutlinedIcon />}
               </ListItemIcon>
-              <ListItemText primary={text} />
+              <ListItemText primary={friend} />
             </ListItemButton>
+            </a>
           </ListItem>
         ))}
       </List>
