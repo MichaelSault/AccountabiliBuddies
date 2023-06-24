@@ -8,6 +8,7 @@ import ListItem from '@mui/material/ListItem';
 import ListItemButton from '@mui/material/ListItemButton';
 import ListItemIcon from '@mui/material/ListItemIcon';
 import ListItemText from '@mui/material/ListItemText';
+import MenuIcon from '@mui/icons-material/Menu';
 
 /* Icons for the menu drawer */
 import HomeRoundedIcon from '@mui/icons-material/HomeRounded';
@@ -76,18 +77,16 @@ export default function MenuDrawer() {
 
   return (
     <div>
-      {['left'].map((anchor) => (
-        <React.Fragment key={anchor}>
-          <Button onClick={toggleDrawer(anchor, true)}>{anchor}</Button>
+        <React.Fragment key={'left'}>
+          <Button onClick={toggleDrawer('left', true)}><MenuIcon/></Button>
           <Drawer
-            anchor={anchor}
-            open={state[anchor]}
-            onClose={toggleDrawer(anchor, false)}
+            anchor={'left'}
+            open={state['left']}
+            onClose={toggleDrawer('left', false)}
           >
-            {list(anchor)}
+            {list('left')}
           </Drawer>
         </React.Fragment>
-      ))}
     </div>
   );
 }
