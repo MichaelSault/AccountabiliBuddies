@@ -3,7 +3,7 @@ import Chart from 'chart.js/auto';
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
-import { Card, CardContent, CardHeader, Divider, Typography } from '@mui/material';
+import { Button, Card, CardContent, CardHeader, Divider, Typography } from '@mui/material';
 
 // constant
 const headerSX = {
@@ -80,8 +80,11 @@ const MainCard = forwardRef(
                 {children}
                 <div><canvas id="myChart" width="20" height="10"></canvas></div>
             </CardContent>
-        )}
-        {!content && children}
+
+            )}
+            {/* card buttons */}
+            <Button>Complete Habit</Button><Button>Failed Habit</Button>
+            {!content && children}
         </Card>
       );
     }
