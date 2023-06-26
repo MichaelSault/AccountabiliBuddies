@@ -1,9 +1,16 @@
 import { forwardRef } from 'react';
 import Chart from 'chart.js/auto';
+import Button from '@mui/material/Button';
+
+import DoneIcon from '@mui/icons-material/Done';
+import ClearIcon from '@mui/icons-material/Clear';
+
+import '../App.css';
+
 
 // material-ui
 import { useTheme } from '@mui/material/styles';
-import { Button, Card, CardContent, CardHeader, Divider, Typography } from '@mui/material';
+import { Card, CardContent, CardHeader, Divider, Typography } from '@mui/material';
 
 // constant
 const headerSX = {
@@ -75,15 +82,15 @@ const MainCard = forwardRef(
             {title && <Divider />}
     
             {/* card content */}
-            {content && (
+            {/* {content && (
             <CardContent sx={contentSX} className={contentClass}>
                 {children}
                 <div><canvas id="myChart" width="20" height="10"></canvas></div>
-            </CardContent>
+            </CardContent> 
 
-            )}
+            )}*/}
             {/* card buttons */}
-            <Button>Complete Habit</Button><Button>Failed Habit</Button>
+            <Button variant="outlined" startIcon={<DoneIcon/>}>Completed</Button><Button variant="outlined" startIcon={<ClearIcon/>}>Missed</Button>
             {!content && children}
         </Card>
       );
