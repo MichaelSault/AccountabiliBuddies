@@ -82,13 +82,13 @@ const MainCard = forwardRef(
             {title && <Divider />}
     
             {/* card content */}
-            {/* {content && (
+            {content && (
             <CardContent sx={contentSX} className={contentClass}>
                 {children}
                 <div><canvas id="myChart" width="20" height="10"></canvas></div>
-            </CardContent> 
-
-            )}*/}
+            </CardContent>  
+ 
+            )}
             {/* card buttons */}
             <Button variant="outlined" startIcon={<DoneIcon/>}>Completed</Button><Button variant="outlined" startIcon={<ClearIcon/>}>Missed</Button>
             {!content && children}

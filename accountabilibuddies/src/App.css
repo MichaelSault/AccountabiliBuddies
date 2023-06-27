@@ -39,3 +39,8 @@ body {
     transform: rotate(360deg);
   }
 }
+
+.habit-container {
+  width: 700px;
+  height: 200px;
+}
