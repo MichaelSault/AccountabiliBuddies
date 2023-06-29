@@ -1,3 +1,5 @@
+import { createTheme, ThemeProvider } from '@mui/material/styles';
+
 import { forwardRef } from 'react';
 import Chart from 'chart.js/auto';
 import Button from '@mui/material/Button';
@@ -16,6 +18,16 @@ import { Card, CardContent, CardHeader, Divider, Typography } from '@mui/materia
 const headerSX = {
     '& .MuiCardHeader-action': { mr: 0 }
 };
+
+//create a theme
+const buttonTheme = createTheme({
+    palette: {
+      primary: {
+        main: '#FFFFFF',
+        darker: '#053e85',
+      },
+    },
+  });
 
 // ==============================|| EXAMPLE CHART DATA ||============================ //
 const xValues = [50,60,70,80,90];
@@ -51,6 +63,7 @@ const MainCard = forwardRef(
             shadow,
             sx = {},
             title,
+            width,
             ...others
         },
         ref
@@ -68,11 +81,11 @@ const MainCard = forwardRef(
                     color: 'lightgrey',
                     background: background,
                     width: '100%',
-                    height: '250px',
+                    height: '350px',
                     ':hover': {
                     boxShadow: boxShadow ? shadow || '0 2px 14px 0 rgb(32 40 45 / 8%)' : 'inherit'
                     },
-                    ...sx
+                    ...sx 
                 }}
             >
             {/* card header and action */}
@@ -85,13 +98,15 @@ const MainCard = forwardRef(
             {content && (
             <CardContent sx={contentSX} className={contentClass}>
                 {children}
-                <div><canvas id="myChart" width="20" height="10"></canvas></div>
+                <div><canvas id="myChart" style={{maxWidth: '500px', maxHeight: '200px', minHeight: '200px'}}></canvas></div>
             </CardContent>  
  
             )}
+            <ThemeProvider theme={buttonTheme}>
             {/* card buttons */}
-            <Button variant="outlined" startIcon={<DoneIcon/>}>Completed</Button><Button variant="outlined" startIcon={<ClearIcon/>}>Missed</Button>
+            <Button variant="outlined" startIcon={<DoneIcon/>} style={{maxWidth: '150px', minWidth: '150px'}}>Completed</Button><Button variant="outlined" startIcon={<ClearIcon/>} style={{maxWidth: '150px', minWidth: '150px'}}>Missed</Button>
             {!content && children}
+            </ThemeProvider>
         </Card>
       );
     }
