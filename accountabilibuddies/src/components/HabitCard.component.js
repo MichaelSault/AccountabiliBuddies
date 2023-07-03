@@ -20,6 +20,7 @@ const HabitCard = forwardRef(
             sx = {},
             title,
             width,
+            height,
             ...others
         },
         ref
@@ -27,7 +28,7 @@ const HabitCard = forwardRef(
   
         return (
         <>
-            <MainCard title={title} secondary={secondary} background={background} width={width} />
+            <MainCard title={title} secondary={secondary} background={background} width={width} height={height}/>
         </>
         )
     }
