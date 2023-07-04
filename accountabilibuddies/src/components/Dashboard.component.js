@@ -3,6 +3,8 @@ import Grid from '@mui/material/Grid';
 import '../App.css';
 
 import HabitCard from './HabitCard.component';
+import OverviewCard from './OverviewCard.component';
+import TaskCard from './TasksCard.component';
 import MainCard from './MainCard.component';
 
 
@@ -22,10 +24,10 @@ export default function Dashboard() {
             </Grid>
             <Grid container spacing={0.5}>
                 <Grid item xs={9}>
-                    <MainCard title="Current Streaks" secondary="75%" background="grey" height="600px"/>
+                    <OverviewCard title="Current Streaks" secondary="75%" background="grey" height="600px"/>
                 </Grid>
                 <Grid item xs={3}>
-                    <MainCard title="Upcoming Tasks" secondary="July 3rd" background="purple" height="600px"/>
+                    <TaskCard title="Upcoming Tasks" secondary="July 3rd" background="purple" height="600px"/>
                 </Grid>
             </Grid>
             
