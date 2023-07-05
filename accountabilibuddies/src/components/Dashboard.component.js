@@ -5,7 +5,6 @@ import '../App.css';
 import HabitCard from './HabitCard.component';
 import OverviewCard from './OverviewCard.component';
 import TaskCard from './TasksCard.component';
-import MainCard from './MainCard.component';
 
 
 export default function Dashboard() {
