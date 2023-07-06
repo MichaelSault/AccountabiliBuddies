@@ -2,6 +2,9 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
 
 import './App.css';
+import Navbar from './components/Navbar.component';
+
+import HomePage from './components/HomePage.component';
 import Dashboard from './components/Dashboard.component';
 import FriendPage from './components/FriendPage.component';
 import Friends from './components/Friends.component';
@@ -12,7 +15,7 @@ import MenuDrawer from './components/MenuDrawer.component';
 function App() {
   return (
     <div className="App">
-      <MenuDrawer/>
+      <Navbar/>
       <header className="App-header">
         <h2>
           Welcome to AccountibiliBuddies
@@ -23,7 +26,7 @@ function App() {
       <BrowserRouter>
         <Routes>
           <Route path='/'/>
-          <Route path='/Home' />
+          <Route path='/Home' element={<HomePage/>}/>
           <Route path='/Habits' element={<Dashboard />}/>
           <Route path='/Friends' element={<Friends />}/>
           <Route path='/Messages' element={<Messages />}/>
